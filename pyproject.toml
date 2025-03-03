@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel", "Cython"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PYinCerval"
+version = "0.0.1"
+description = "A C-backed interval arithmetic library"
+authors = [
+    {name = "Rohan Karan", email = "rohankaran001@gmail.com"},
+]
+dependencies = []
+
+[tool.setuptools]
+packages = ["src"]

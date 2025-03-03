@@ -1,0 +1,8 @@
+MANIFEST.in
+pyproject.toml
+interval_arithmetic.egg-info/PKG-INFO
+interval_arithmetic.egg-info/SOURCES.txt
+interval_arithmetic.egg-info/dependency_links.txt
+interval_arithmetic.egg-info/top_level.txt
+src/__init__.py
+tests/test_interval.py

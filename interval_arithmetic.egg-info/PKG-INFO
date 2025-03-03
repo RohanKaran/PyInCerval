@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: interval_arithmetic
+Version: 0.1.0
+Summary: A C-backed interval arithmetic library
+Author-email: Your Name <your@email.com>
