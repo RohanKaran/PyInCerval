@@ -29,30 +29,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install black isort pytest
+        python -m pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi 
         pip install .
 
     - name: Test with pytest
       run: |
         pytest
-
-    - name: Lint with black and isort
-      run: |
-        # Format code with black
-        black .
-        # Sort imports with isort
-        isort . --profile black
-        
-    - name: Configure Git
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-    - name: Commit and push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git add .
-        git commit -m "Apply code formatting with black and isort"
-        git push
