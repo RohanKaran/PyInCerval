@@ -1,8 +1,0 @@
-MANIFEST.in
-pyproject.toml
-PYinCerval.egg-info/PKG-INFO
-PYinCerval.egg-info/SOURCES.txt
-PYinCerval.egg-info/dependency_links.txt
-PYinCerval.egg-info/top_level.txt
-src/__init__.py
-tests/test_interval.py

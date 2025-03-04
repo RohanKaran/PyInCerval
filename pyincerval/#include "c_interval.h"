@@ -1,5 +1,4 @@
 #include "c_interval.h"
-#include <math.h>
 
 Interval interval_add(Interval a, Interval b) {
     Interval result = {a.lower + b.lower, a.upper + b.upper};

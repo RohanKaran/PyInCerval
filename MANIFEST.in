@@ -1,2 +1,2 @@
-include interval/*.c
-include interval/*.h
+include pyincerval/*.c
+include pyincerval/*.h

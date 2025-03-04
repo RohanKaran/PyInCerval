@@ -1,8 +1,10 @@
-from interval.interval import PyInterval
+from pyincerval.interval import PyInCerval
+
 
 def test_add():
-    a = PyInterval(1.0, 2.0)
-    b = PyInterval(3.0, 4.0)
+    a = PyInCerval(1.0, 2.0)
+    b = PyInCerval(3.0, 4.0)
     result = a.add(b)
-    assert result.iv.lower == 4.0
-    assert result.iv.upper == 6.0
+    print(dir(result))
+    assert result.lower == 4.0
+    assert result.upper == 6.0

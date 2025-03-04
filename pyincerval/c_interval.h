@@ -1,7 +1,9 @@
 #ifndef C_INTERVAL_H
 #define C_INTERVAL_H
 
-typedef struct {
+#include <math.h>
+
+typedef struct Interval {
     double lower;
     double upper;
 } Interval;
