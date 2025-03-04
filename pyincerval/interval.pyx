@@ -3,7 +3,6 @@
 
 from .interval cimport Interval, interval_add, interval_mul
 
-
 cdef class PyInCerval:
     cdef Interval iv
 
