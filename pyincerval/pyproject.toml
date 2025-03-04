@@ -7,7 +7,7 @@ name = "PYinCerval"
 version = "0.0.1"
 description = "A C-backed interval arithmetic library"
 authors = [
-    {name = "Rohan Karan", email = "rohankaran001@gmail.com"},
+    { name = "Rohan Karan", email = "rohankaran001@gmail.com" },
 ]
 dependencies = []
 
