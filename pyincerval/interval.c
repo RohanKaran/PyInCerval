@@ -1744,13 +1744,6 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject *const *kwvalues
         __Pyx__ArgTypeTest(obj, type, name, exact))
 static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
-/* PyObjectCall.proto */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
-#else
-#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
-#endif
-
 /* PyObjectFormatSimple.proto */
 #if CYTHON_COMPILING_IN_PYPY
     #define __Pyx_PyObject_FormatSimple(s, f) (\
@@ -1824,6 +1817,13 @@ static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, 
     (assert(__pyx_pyframe_localsplus_offset), (PyObject **)(((char *)(frame)) + __pyx_pyframe_localsplus_offset))
 #endif
 #endif
+#endif
+
+/* PyObjectCall.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
+#else
+#define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
 #endif
 
 /* PyObjectCallMethO.proto */
@@ -2132,23 +2132,19 @@ int __pyx_module_is_main_pyincerval__interval = 0;
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_TypeError;
 /* #### Code section: string_decls ### */
-static const char __pyx_k__2[] = "[";
-static const char __pyx_k__3[] = ", ";
-static const char __pyx_k__4[] = "]";
+static const char __pyx_k_[] = "[";
+static const char __pyx_k__2[] = ", ";
+static const char __pyx_k__3[] = "]";
+static const char __pyx_k__8[] = "?";
 static const char __pyx_k_gc[] = "gc";
-static const char __pyx_k__12[] = "?";
-static const char __pyx_k_add[] = "add";
-static const char __pyx_k_mul[] = "mul";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_lower[] = "lower";
-static const char __pyx_k_other[] = "other";
 static const char __pyx_k_upper[] = "upper";
 static const char __pyx_k_enable[] = "enable";
 static const char __pyx_k_reduce[] = "__reduce__";
-static const char __pyx_k_result[] = "result";
 static const char __pyx_k_disable[] = "disable";
 static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_setstate[] = "__setstate__";
@@ -2160,20 +2156,17 @@ static const char __pyx_k_PyInCerval[] = "PyInCerval";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_stringsource[] = "<stringsource>";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
-static const char __pyx_k_PyInCerval_add[] = "PyInCerval.add";
-static const char __pyx_k_PyInCerval_mul[] = "PyInCerval.mul";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_pyincerval_interval[] = "pyincerval.interval";
-static const char __pyx_k_pyincerval_interval_pyx[] = "pyincerval/interval.pyx";
 static const char __pyx_k_PyInCerval___reduce_cython[] = "PyInCerval.__reduce_cython__";
 static const char __pyx_k_PyInCerval___setstate_cython[] = "PyInCerval.__setstate_cython__";
 static const char __pyx_k_Pickling_of_struct_members_such[] = "Pickling of struct members such as self.iv must be explicitly requested with @auto_pickle(True)";
 /* #### Code section: decls ### */
 static int __pyx_pf_10pyincerval_8interval_10PyInCerval___init__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, double __pyx_v_lower, double __pyx_v_upper); /* proto */
-static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2add(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other); /* proto */
-static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4mul(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other); /* proto */
+static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2__add__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other); /* proto */
+static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4__mul__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other); /* proto */
 static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_6__repr__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_5lower___get__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_5upper___get__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self); /* proto */
@@ -2211,18 +2204,15 @@ typedef struct {
   PyObject *__pyx_type_10pyincerval_8interval_PyInCerval;
   #endif
   PyTypeObject *__pyx_ptype_10pyincerval_8interval_PyInCerval;
+  PyObject *__pyx_kp_u_;
   PyObject *__pyx_kp_s_Pickling_of_struct_members_such;
   PyObject *__pyx_n_s_PyInCerval;
   PyObject *__pyx_n_s_PyInCerval___reduce_cython;
   PyObject *__pyx_n_s_PyInCerval___setstate_cython;
-  PyObject *__pyx_n_s_PyInCerval_add;
-  PyObject *__pyx_n_s_PyInCerval_mul;
   PyObject *__pyx_n_s_TypeError;
-  PyObject *__pyx_n_s__12;
   PyObject *__pyx_kp_u__2;
   PyObject *__pyx_kp_u__3;
-  PyObject *__pyx_kp_u__4;
-  PyObject *__pyx_n_s_add;
+  PyObject *__pyx_n_s__8;
   PyObject *__pyx_n_s_asyncio_coroutines;
   PyObject *__pyx_n_s_cline_in_traceback;
   PyObject *__pyx_kp_u_disable;
@@ -2233,31 +2223,22 @@ typedef struct {
   PyObject *__pyx_kp_u_isenabled;
   PyObject *__pyx_n_s_lower;
   PyObject *__pyx_n_s_main;
-  PyObject *__pyx_n_s_mul;
   PyObject *__pyx_n_s_name;
-  PyObject *__pyx_n_s_other;
   PyObject *__pyx_n_s_pyincerval_interval;
-  PyObject *__pyx_kp_s_pyincerval_interval_pyx;
   PyObject *__pyx_n_s_pyx_state;
   PyObject *__pyx_n_s_reduce;
   PyObject *__pyx_n_s_reduce_cython;
   PyObject *__pyx_n_s_reduce_ex;
-  PyObject *__pyx_n_s_result;
   PyObject *__pyx_n_s_self;
   PyObject *__pyx_n_s_setstate;
   PyObject *__pyx_n_s_setstate_cython;
   PyObject *__pyx_kp_s_stringsource;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_upper;
-  PyObject *__pyx_int_0;
-  PyObject *__pyx_tuple_;
-  PyObject *__pyx_tuple__5;
-  PyObject *__pyx_tuple__8;
-  PyObject *__pyx_tuple__10;
-  PyObject *__pyx_codeobj__6;
+  PyObject *__pyx_tuple__4;
+  PyObject *__pyx_tuple__6;
+  PyObject *__pyx_codeobj__5;
   PyObject *__pyx_codeobj__7;
-  PyObject *__pyx_codeobj__9;
-  PyObject *__pyx_codeobj__11;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2302,18 +2283,15 @@ static int __pyx_m_clear(PyObject *m) {
   #endif
   Py_CLEAR(clear_module_state->__pyx_ptype_10pyincerval_8interval_PyInCerval);
   Py_CLEAR(clear_module_state->__pyx_type_10pyincerval_8interval_PyInCerval);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Pickling_of_struct_members_such);
   Py_CLEAR(clear_module_state->__pyx_n_s_PyInCerval);
   Py_CLEAR(clear_module_state->__pyx_n_s_PyInCerval___reduce_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_PyInCerval___setstate_cython);
-  Py_CLEAR(clear_module_state->__pyx_n_s_PyInCerval_add);
-  Py_CLEAR(clear_module_state->__pyx_n_s_PyInCerval_mul);
   Py_CLEAR(clear_module_state->__pyx_n_s_TypeError);
-  Py_CLEAR(clear_module_state->__pyx_n_s__12);
   Py_CLEAR(clear_module_state->__pyx_kp_u__2);
   Py_CLEAR(clear_module_state->__pyx_kp_u__3);
-  Py_CLEAR(clear_module_state->__pyx_kp_u__4);
-  Py_CLEAR(clear_module_state->__pyx_n_s_add);
+  Py_CLEAR(clear_module_state->__pyx_n_s__8);
   Py_CLEAR(clear_module_state->__pyx_n_s_asyncio_coroutines);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
   Py_CLEAR(clear_module_state->__pyx_kp_u_disable);
@@ -2324,31 +2302,22 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_isenabled);
   Py_CLEAR(clear_module_state->__pyx_n_s_lower);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
-  Py_CLEAR(clear_module_state->__pyx_n_s_mul);
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
-  Py_CLEAR(clear_module_state->__pyx_n_s_other);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyincerval_interval);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_pyincerval_interval_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_state);
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce);
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce_ex);
-  Py_CLEAR(clear_module_state->__pyx_n_s_result);
   Py_CLEAR(clear_module_state->__pyx_n_s_self);
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate);
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate_cython);
   Py_CLEAR(clear_module_state->__pyx_kp_s_stringsource);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_upper);
-  Py_CLEAR(clear_module_state->__pyx_int_0);
-  Py_CLEAR(clear_module_state->__pyx_tuple_);
-  Py_CLEAR(clear_module_state->__pyx_tuple__5);
-  Py_CLEAR(clear_module_state->__pyx_tuple__8);
-  Py_CLEAR(clear_module_state->__pyx_tuple__10);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__6);
+  Py_CLEAR(clear_module_state->__pyx_tuple__4);
+  Py_CLEAR(clear_module_state->__pyx_tuple__6);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__5);
   Py_CLEAR(clear_module_state->__pyx_codeobj__7);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__9);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__11);
   return 0;
 }
 #endif
@@ -2371,18 +2340,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   #endif
   Py_VISIT(traverse_module_state->__pyx_ptype_10pyincerval_8interval_PyInCerval);
   Py_VISIT(traverse_module_state->__pyx_type_10pyincerval_8interval_PyInCerval);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Pickling_of_struct_members_such);
   Py_VISIT(traverse_module_state->__pyx_n_s_PyInCerval);
   Py_VISIT(traverse_module_state->__pyx_n_s_PyInCerval___reduce_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_PyInCerval___setstate_cython);
-  Py_VISIT(traverse_module_state->__pyx_n_s_PyInCerval_add);
-  Py_VISIT(traverse_module_state->__pyx_n_s_PyInCerval_mul);
   Py_VISIT(traverse_module_state->__pyx_n_s_TypeError);
-  Py_VISIT(traverse_module_state->__pyx_n_s__12);
   Py_VISIT(traverse_module_state->__pyx_kp_u__2);
   Py_VISIT(traverse_module_state->__pyx_kp_u__3);
-  Py_VISIT(traverse_module_state->__pyx_kp_u__4);
-  Py_VISIT(traverse_module_state->__pyx_n_s_add);
+  Py_VISIT(traverse_module_state->__pyx_n_s__8);
   Py_VISIT(traverse_module_state->__pyx_n_s_asyncio_coroutines);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
   Py_VISIT(traverse_module_state->__pyx_kp_u_disable);
@@ -2393,31 +2359,22 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_isenabled);
   Py_VISIT(traverse_module_state->__pyx_n_s_lower);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
-  Py_VISIT(traverse_module_state->__pyx_n_s_mul);
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
-  Py_VISIT(traverse_module_state->__pyx_n_s_other);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyincerval_interval);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_pyincerval_interval_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_state);
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce);
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce_ex);
-  Py_VISIT(traverse_module_state->__pyx_n_s_result);
   Py_VISIT(traverse_module_state->__pyx_n_s_self);
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate);
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate_cython);
   Py_VISIT(traverse_module_state->__pyx_kp_s_stringsource);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_upper);
-  Py_VISIT(traverse_module_state->__pyx_int_0);
-  Py_VISIT(traverse_module_state->__pyx_tuple_);
-  Py_VISIT(traverse_module_state->__pyx_tuple__5);
-  Py_VISIT(traverse_module_state->__pyx_tuple__8);
-  Py_VISIT(traverse_module_state->__pyx_tuple__10);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__6);
+  Py_VISIT(traverse_module_state->__pyx_tuple__4);
+  Py_VISIT(traverse_module_state->__pyx_tuple__6);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__5);
   Py_VISIT(traverse_module_state->__pyx_codeobj__7);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__9);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__11);
   return 0;
 }
 #endif
@@ -2450,18 +2407,15 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_type_10pyincerval_8interval_PyInCerval __pyx_mstate_global->__pyx_type_10pyincerval_8interval_PyInCerval
 #endif
 #define __pyx_ptype_10pyincerval_8interval_PyInCerval __pyx_mstate_global->__pyx_ptype_10pyincerval_8interval_PyInCerval
+#define __pyx_kp_u_ __pyx_mstate_global->__pyx_kp_u_
 #define __pyx_kp_s_Pickling_of_struct_members_such __pyx_mstate_global->__pyx_kp_s_Pickling_of_struct_members_such
 #define __pyx_n_s_PyInCerval __pyx_mstate_global->__pyx_n_s_PyInCerval
 #define __pyx_n_s_PyInCerval___reduce_cython __pyx_mstate_global->__pyx_n_s_PyInCerval___reduce_cython
 #define __pyx_n_s_PyInCerval___setstate_cython __pyx_mstate_global->__pyx_n_s_PyInCerval___setstate_cython
-#define __pyx_n_s_PyInCerval_add __pyx_mstate_global->__pyx_n_s_PyInCerval_add
-#define __pyx_n_s_PyInCerval_mul __pyx_mstate_global->__pyx_n_s_PyInCerval_mul
 #define __pyx_n_s_TypeError __pyx_mstate_global->__pyx_n_s_TypeError
-#define __pyx_n_s__12 __pyx_mstate_global->__pyx_n_s__12
 #define __pyx_kp_u__2 __pyx_mstate_global->__pyx_kp_u__2
 #define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
-#define __pyx_kp_u__4 __pyx_mstate_global->__pyx_kp_u__4
-#define __pyx_n_s_add __pyx_mstate_global->__pyx_n_s_add
+#define __pyx_n_s__8 __pyx_mstate_global->__pyx_n_s__8
 #define __pyx_n_s_asyncio_coroutines __pyx_mstate_global->__pyx_n_s_asyncio_coroutines
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
 #define __pyx_kp_u_disable __pyx_mstate_global->__pyx_kp_u_disable
@@ -2472,31 +2426,22 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_isenabled __pyx_mstate_global->__pyx_kp_u_isenabled
 #define __pyx_n_s_lower __pyx_mstate_global->__pyx_n_s_lower
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
-#define __pyx_n_s_mul __pyx_mstate_global->__pyx_n_s_mul
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
-#define __pyx_n_s_other __pyx_mstate_global->__pyx_n_s_other
 #define __pyx_n_s_pyincerval_interval __pyx_mstate_global->__pyx_n_s_pyincerval_interval
-#define __pyx_kp_s_pyincerval_interval_pyx __pyx_mstate_global->__pyx_kp_s_pyincerval_interval_pyx
 #define __pyx_n_s_pyx_state __pyx_mstate_global->__pyx_n_s_pyx_state
 #define __pyx_n_s_reduce __pyx_mstate_global->__pyx_n_s_reduce
 #define __pyx_n_s_reduce_cython __pyx_mstate_global->__pyx_n_s_reduce_cython
 #define __pyx_n_s_reduce_ex __pyx_mstate_global->__pyx_n_s_reduce_ex
-#define __pyx_n_s_result __pyx_mstate_global->__pyx_n_s_result
 #define __pyx_n_s_self __pyx_mstate_global->__pyx_n_s_self
 #define __pyx_n_s_setstate __pyx_mstate_global->__pyx_n_s_setstate
 #define __pyx_n_s_setstate_cython __pyx_mstate_global->__pyx_n_s_setstate_cython
 #define __pyx_kp_s_stringsource __pyx_mstate_global->__pyx_kp_s_stringsource
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_upper __pyx_mstate_global->__pyx_n_s_upper
-#define __pyx_int_0 __pyx_mstate_global->__pyx_int_0
-#define __pyx_tuple_ __pyx_mstate_global->__pyx_tuple_
-#define __pyx_tuple__5 __pyx_mstate_global->__pyx_tuple__5
-#define __pyx_tuple__8 __pyx_mstate_global->__pyx_tuple__8
-#define __pyx_tuple__10 __pyx_mstate_global->__pyx_tuple__10
-#define __pyx_codeobj__6 __pyx_mstate_global->__pyx_codeobj__6
+#define __pyx_tuple__4 __pyx_mstate_global->__pyx_tuple__4
+#define __pyx_tuple__6 __pyx_mstate_global->__pyx_tuple__6
+#define __pyx_codeobj__5 __pyx_mstate_global->__pyx_codeobj__5
 #define __pyx_codeobj__7 __pyx_mstate_global->__pyx_codeobj__7
-#define __pyx_codeobj__9 __pyx_mstate_global->__pyx_codeobj__9
-#define __pyx_codeobj__11 __pyx_mstate_global->__pyx_codeobj__11
 /* #### Code section: module_code ### */
 
 /* "pyincerval/interval.pyx":10
@@ -2618,7 +2563,7 @@ static int __pyx_pf_10pyincerval_8interval_10PyInCerval___init__(struct __pyx_ob
  *         self.iv.lower = lower
  *         self.iv.upper = upper             # <<<<<<<<<<<<<<
  * 
- *     def add(self, PyInCerval other):
+ *     def __add__(self, PyInCerval other):
  */
   __pyx_v_self->iv.upper = __pyx_v_upper;
 
@@ -2638,113 +2583,35 @@ static int __pyx_pf_10pyincerval_8interval_10PyInCerval___init__(struct __pyx_ob
 /* "pyincerval/interval.pyx":14
  *         self.iv.upper = upper
  * 
- *     def add(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *     def __add__(self, PyInCerval other):             # <<<<<<<<<<<<<<
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_add(self.iv, other.iv)
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_3add(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10pyincerval_8interval_10PyInCerval_3add = {"add", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10pyincerval_8interval_10PyInCerval_3add, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_3add(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other = 0;
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
+static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_3__add__(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_3__add__(PyObject *__pyx_v_self, PyObject *__pyx_v_other) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[1] = {0};
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("add (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_MACROS
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  {
-    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_other,0};
-    if (__pyx_kwds) {
-      Py_ssize_t kw_args;
-      switch (__pyx_nargs) {
-        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
-      switch (__pyx_nargs) {
-        case  0:
-        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_other)) != 0)) {
-          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
-          kw_args--;
-        }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 14, __pyx_L3_error)
-        else goto __pyx_L5_argtuple_error;
-      }
-      if (unlikely(kw_args > 0)) {
-        const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "add") < 0)) __PYX_ERR(1, 14, __pyx_L3_error)
-      }
-    } else if (unlikely(__pyx_nargs != 1)) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
-    }
-    __pyx_v_other = ((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)values[0]);
-  }
-  goto __pyx_L6_skip;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("add", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 14, __pyx_L3_error)
-  __pyx_L6_skip:;
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  {
-    Py_ssize_t __pyx_temp;
-    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
-    }
-  }
-  __Pyx_AddTraceback("pyincerval.interval.PyInCerval.add", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
+  __Pyx_RefNannySetupContext("__add__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_other), __pyx_ptype_10pyincerval_8interval_PyInCerval, 1, "other", 0))) __PYX_ERR(1, 14, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10pyincerval_8interval_10PyInCerval_2add(((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_v_self), __pyx_v_other);
+  __pyx_r = __pyx_pf_10pyincerval_8interval_10PyInCerval_2__add__(((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_v_self), ((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_v_other));
 
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
   __pyx_r = NULL;
   __pyx_L0:;
-  {
-    Py_ssize_t __pyx_temp;
-    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
-    }
-  }
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2add(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other) {
+static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2__add__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other) {
   struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_result = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2752,23 +2619,23 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2add(struct __pyx_
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("add", 1);
+  __Pyx_RefNannySetupContext("__add__", 1);
 
   /* "pyincerval/interval.pyx":15
  * 
- *     def add(self, PyInCerval other):
- *         cdef PyInCerval result = PyInCerval(0, 0)             # <<<<<<<<<<<<<<
+ *     def __add__(self, PyInCerval other):
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)             # <<<<<<<<<<<<<<
  *         result.iv = interval_add(self.iv, other.iv)
  *         return result
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_10pyincerval_8interval_PyInCerval), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_1 = ((PyObject *)__pyx_tp_new_10pyincerval_8interval_PyInCerval(((PyTypeObject *)__pyx_ptype_10pyincerval_8interval_PyInCerval), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 15, __pyx_L1_error)
+  __Pyx_GOTREF((PyObject *)__pyx_t_1);
   __pyx_v_result = ((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_t_1);
   __pyx_t_1 = 0;
 
   /* "pyincerval/interval.pyx":16
- *     def add(self, PyInCerval other):
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *     def __add__(self, PyInCerval other):
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_add(self.iv, other.iv)             # <<<<<<<<<<<<<<
  *         return result
  * 
@@ -2776,11 +2643,11 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2add(struct __pyx_
   __pyx_v_result->iv = interval_add(__pyx_v_self->iv, __pyx_v_other->iv);
 
   /* "pyincerval/interval.pyx":17
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_add(self.iv, other.iv)
  *         return result             # <<<<<<<<<<<<<<
  * 
- *     def mul(self, PyInCerval other):
+ *     def __mul__(self, PyInCerval other):
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF((PyObject *)__pyx_v_result);
@@ -2790,15 +2657,15 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2add(struct __pyx_
   /* "pyincerval/interval.pyx":14
  *         self.iv.upper = upper
  * 
- *     def add(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *     def __add__(self, PyInCerval other):             # <<<<<<<<<<<<<<
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_add(self.iv, other.iv)
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyincerval.interval.PyInCerval.add", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyincerval.interval.PyInCerval.__add__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_result);
@@ -2810,113 +2677,35 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_2add(struct __pyx_
 /* "pyincerval/interval.pyx":19
  *         return result
  * 
- *     def mul(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *     def __mul__(self, PyInCerval other):             # <<<<<<<<<<<<<<
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_mul(self.iv, other.iv)
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_5mul(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10pyincerval_8interval_10PyInCerval_5mul = {"mul", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10pyincerval_8interval_10PyInCerval_5mul, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_5mul(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other = 0;
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
+static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_5__mul__(PyObject *__pyx_v_self, PyObject *__pyx_v_other); /*proto*/
+static PyObject *__pyx_pw_10pyincerval_8interval_10PyInCerval_5__mul__(PyObject *__pyx_v_self, PyObject *__pyx_v_other) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[1] = {0};
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("mul (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_MACROS
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  {
-    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_other,0};
-    if (__pyx_kwds) {
-      Py_ssize_t kw_args;
-      switch (__pyx_nargs) {
-        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
-      switch (__pyx_nargs) {
-        case  0:
-        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_other)) != 0)) {
-          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
-          kw_args--;
-        }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 19, __pyx_L3_error)
-        else goto __pyx_L5_argtuple_error;
-      }
-      if (unlikely(kw_args > 0)) {
-        const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "mul") < 0)) __PYX_ERR(1, 19, __pyx_L3_error)
-      }
-    } else if (unlikely(__pyx_nargs != 1)) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
-    }
-    __pyx_v_other = ((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)values[0]);
-  }
-  goto __pyx_L6_skip;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("mul", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 19, __pyx_L3_error)
-  __pyx_L6_skip:;
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  {
-    Py_ssize_t __pyx_temp;
-    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
-    }
-  }
-  __Pyx_AddTraceback("pyincerval.interval.PyInCerval.mul", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
+  __Pyx_RefNannySetupContext("__mul__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_other), __pyx_ptype_10pyincerval_8interval_PyInCerval, 1, "other", 0))) __PYX_ERR(1, 19, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10pyincerval_8interval_10PyInCerval_4mul(((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_v_self), __pyx_v_other);
+  __pyx_r = __pyx_pf_10pyincerval_8interval_10PyInCerval_4__mul__(((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_v_self), ((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_v_other));
 
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
   __pyx_r = NULL;
   __pyx_L0:;
-  {
-    Py_ssize_t __pyx_temp;
-    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
-    }
-  }
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4mul(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other) {
+static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4__mul__(struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_self, struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_other) {
   struct __pyx_obj_10pyincerval_8interval_PyInCerval *__pyx_v_result = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -2924,23 +2713,23 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4mul(struct __pyx_
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("mul", 1);
+  __Pyx_RefNannySetupContext("__mul__", 1);
 
   /* "pyincerval/interval.pyx":20
  * 
- *     def mul(self, PyInCerval other):
- *         cdef PyInCerval result = PyInCerval(0, 0)             # <<<<<<<<<<<<<<
+ *     def __mul__(self, PyInCerval other):
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)             # <<<<<<<<<<<<<<
  *         result.iv = interval_mul(self.iv, other.iv)
  *         return result
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_10pyincerval_8interval_PyInCerval), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_1 = ((PyObject *)__pyx_tp_new_10pyincerval_8interval_PyInCerval(((PyTypeObject *)__pyx_ptype_10pyincerval_8interval_PyInCerval), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 20, __pyx_L1_error)
+  __Pyx_GOTREF((PyObject *)__pyx_t_1);
   __pyx_v_result = ((struct __pyx_obj_10pyincerval_8interval_PyInCerval *)__pyx_t_1);
   __pyx_t_1 = 0;
 
   /* "pyincerval/interval.pyx":21
- *     def mul(self, PyInCerval other):
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *     def __mul__(self, PyInCerval other):
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_mul(self.iv, other.iv)             # <<<<<<<<<<<<<<
  *         return result
  * 
@@ -2948,7 +2737,7 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4mul(struct __pyx_
   __pyx_v_result->iv = interval_mul(__pyx_v_self->iv, __pyx_v_other->iv);
 
   /* "pyincerval/interval.pyx":22
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_mul(self.iv, other.iv)
  *         return result             # <<<<<<<<<<<<<<
  * 
@@ -2962,15 +2751,15 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_4mul(struct __pyx_
   /* "pyincerval/interval.pyx":19
  *         return result
  * 
- *     def mul(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
+ *     def __mul__(self, PyInCerval other):             # <<<<<<<<<<<<<<
+ *         cdef PyInCerval result = PyInCerval.__new__(PyInCerval)
  *         result.iv = interval_mul(self.iv, other.iv)
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("pyincerval.interval.PyInCerval.mul", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyincerval.interval.PyInCerval.__mul__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_result);
@@ -3020,17 +2809,17 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_6__repr__(struct _
  *     def __repr__(self):
  *         return f"[{self.iv.lower}, {self.iv.upper}]"             # <<<<<<<<<<<<<<
  * 
- * 
+ *     @property
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = 0;
   __pyx_t_3 = 127;
-  __Pyx_INCREF(__pyx_kp_u__2);
+  __Pyx_INCREF(__pyx_kp_u_);
   __pyx_t_2 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u__2);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u__2);
+  __Pyx_GIVEREF(__pyx_kp_u_);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_);
   __pyx_t_4 = PyFloat_FromDouble(__pyx_v_self->iv.lower); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 25, __pyx_L1_error)
@@ -3041,10 +2830,10 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_6__repr__(struct _
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_INCREF(__pyx_kp_u__3);
+  __Pyx_INCREF(__pyx_kp_u__2);
   __pyx_t_2 += 2;
-  __Pyx_GIVEREF(__pyx_kp_u__3);
-  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u__3);
+  __Pyx_GIVEREF(__pyx_kp_u__2);
+  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u__2);
   __pyx_t_5 = PyFloat_FromDouble(__pyx_v_self->iv.upper); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 25, __pyx_L1_error)
@@ -3055,10 +2844,10 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_6__repr__(struct _
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_4);
   __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u__4);
+  __Pyx_INCREF(__pyx_kp_u__3);
   __pyx_t_2 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u__4);
-  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u__4);
+  __Pyx_GIVEREF(__pyx_kp_u__3);
+  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u__3);
   __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3087,8 +2876,8 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_6__repr__(struct _
   return __pyx_r;
 }
 
-/* "pyincerval/interval.pyx":28
- * 
+/* "pyincerval/interval.pyx":27
+ *         return f"[{self.iv.lower}, {self.iv.upper}]"
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def lower(self):
@@ -3119,7 +2908,7 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_5lower___get__(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "pyincerval/interval.pyx":30
+  /* "pyincerval/interval.pyx":29
  *     @property
  *     def lower(self):
  *         return self.iv.lower             # <<<<<<<<<<<<<<
@@ -3127,14 +2916,14 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_5lower___get__(str
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->iv.lower); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 30, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->iv.lower); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyincerval/interval.pyx":28
- * 
+  /* "pyincerval/interval.pyx":27
+ *         return f"[{self.iv.lower}, {self.iv.upper}]"
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def lower(self):
@@ -3152,7 +2941,7 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_5lower___get__(str
   return __pyx_r;
 }
 
-/* "pyincerval/interval.pyx":32
+/* "pyincerval/interval.pyx":31
  *         return self.iv.lower
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -3184,20 +2973,19 @@ static PyObject *__pyx_pf_10pyincerval_8interval_10PyInCerval_5upper___get__(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "pyincerval/interval.pyx":34
+  /* "pyincerval/interval.pyx":33
  *     @property
  *     def upper(self):
  *         return self.iv.upper             # <<<<<<<<<<<<<<
- * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->iv.upper); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 34, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->iv.upper); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pyincerval/interval.pyx":32
+  /* "pyincerval/interval.pyx":31
  *         return self.iv.lower
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -3464,6 +3252,76 @@ static void __pyx_tp_dealloc_10pyincerval_8interval_PyInCerval(PyObject *o) {
   #endif
 }
 
+static CYTHON_INLINE PyObject *__pyx_nb_add_10pyincerval_8interval_PyInCerval_maybe_call_slot(PyTypeObject* type, PyObject *left, PyObject *right ) {
+    binaryfunc slot;
+#if CYTHON_USE_TYPE_SLOTS || PY_MAJOR_VERSION < 3 || CYTHON_COMPILING_IN_PYPY
+    slot = type->tp_as_number ? type->tp_as_number->nb_add : NULL;
+#else
+    slot = (binaryfunc) PyType_GetSlot(type, Py_nb_add);
+#endif
+    return slot ? slot(left, right ) : __Pyx_NewRef(Py_NotImplemented);
+}
+static PyObject *__pyx_nb_add_10pyincerval_8interval_PyInCerval(PyObject *left, PyObject *right ) {
+    int maybe_self_is_left, maybe_self_is_right = 0;
+    maybe_self_is_left = Py_TYPE(left) == Py_TYPE(right)
+#if CYTHON_USE_TYPE_SLOTS
+            || (Py_TYPE(left)->tp_as_number && Py_TYPE(left)->tp_as_number->nb_add == &__pyx_nb_add_10pyincerval_8interval_PyInCerval)
+#endif
+            || __Pyx_TypeCheck(left, __pyx_ptype_10pyincerval_8interval_PyInCerval);
+    if (maybe_self_is_left) {
+        PyObject *res;
+        res = __pyx_pw_10pyincerval_8interval_10PyInCerval_3__add__(left, right);
+        if (res != Py_NotImplemented) return res;
+        Py_DECREF(res);
+    }
+    maybe_self_is_right = Py_TYPE(left) == Py_TYPE(right)
+#if CYTHON_USE_TYPE_SLOTS
+            || (Py_TYPE(right)->tp_as_number && Py_TYPE(right)->tp_as_number->nb_add == &__pyx_nb_add_10pyincerval_8interval_PyInCerval)
+#endif
+            || PyType_IsSubtype(Py_TYPE(right), __pyx_ptype_10pyincerval_8interval_PyInCerval);
+    if (maybe_self_is_right) {
+        return __pyx_nb_add_10pyincerval_8interval_PyInCerval_maybe_call_slot(__Pyx_PyType_GetSlot(__pyx_ptype_10pyincerval_8interval_PyInCerval, tp_base, PyTypeObject*), left, right );
+    }
+    return __Pyx_NewRef(Py_NotImplemented);
+}
+
+
+
+static CYTHON_INLINE PyObject *__pyx_nb_multiply_10pyincerval_8interval_PyInCerval_maybe_call_slot(PyTypeObject* type, PyObject *left, PyObject *right ) {
+    binaryfunc slot;
+#if CYTHON_USE_TYPE_SLOTS || PY_MAJOR_VERSION < 3 || CYTHON_COMPILING_IN_PYPY
+    slot = type->tp_as_number ? type->tp_as_number->nb_multiply : NULL;
+#else
+    slot = (binaryfunc) PyType_GetSlot(type, Py_nb_multiply);
+#endif
+    return slot ? slot(left, right ) : __Pyx_NewRef(Py_NotImplemented);
+}
+static PyObject *__pyx_nb_multiply_10pyincerval_8interval_PyInCerval(PyObject *left, PyObject *right ) {
+    int maybe_self_is_left, maybe_self_is_right = 0;
+    maybe_self_is_left = Py_TYPE(left) == Py_TYPE(right)
+#if CYTHON_USE_TYPE_SLOTS
+            || (Py_TYPE(left)->tp_as_number && Py_TYPE(left)->tp_as_number->nb_multiply == &__pyx_nb_multiply_10pyincerval_8interval_PyInCerval)
+#endif
+            || __Pyx_TypeCheck(left, __pyx_ptype_10pyincerval_8interval_PyInCerval);
+    if (maybe_self_is_left) {
+        PyObject *res;
+        res = __pyx_pw_10pyincerval_8interval_10PyInCerval_5__mul__(left, right);
+        if (res != Py_NotImplemented) return res;
+        Py_DECREF(res);
+    }
+    maybe_self_is_right = Py_TYPE(left) == Py_TYPE(right)
+#if CYTHON_USE_TYPE_SLOTS
+            || (Py_TYPE(right)->tp_as_number && Py_TYPE(right)->tp_as_number->nb_multiply == &__pyx_nb_multiply_10pyincerval_8interval_PyInCerval)
+#endif
+            || PyType_IsSubtype(Py_TYPE(right), __pyx_ptype_10pyincerval_8interval_PyInCerval);
+    if (maybe_self_is_right) {
+        return __pyx_nb_multiply_10pyincerval_8interval_PyInCerval_maybe_call_slot(__Pyx_PyType_GetSlot(__pyx_ptype_10pyincerval_8interval_PyInCerval, tp_base, PyTypeObject*), left, right );
+    }
+    return __Pyx_NewRef(Py_NotImplemented);
+}
+
+
+
 static PyObject *__pyx_getprop_10pyincerval_8interval_10PyInCerval_lower(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_10pyincerval_8interval_10PyInCerval_5lower_1__get__(o);
 }
@@ -3477,8 +3335,6 @@ static PyObject *__pyx_specialmethod___pyx_pw_10pyincerval_8interval_10PyInCerva
 }
 
 static PyMethodDef __pyx_methods_10pyincerval_8interval_PyInCerval[] = {
-  {"add", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10pyincerval_8interval_10PyInCerval_3add, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"mul", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10pyincerval_8interval_10PyInCerval_5mul, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {"__repr__", (PyCFunction)__pyx_specialmethod___pyx_pw_10pyincerval_8interval_10PyInCerval_7__repr__, METH_NOARGS|METH_COEXIST, 0},
   {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10pyincerval_8interval_10PyInCerval_9__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10pyincerval_8interval_10PyInCerval_11__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
@@ -3494,6 +3350,8 @@ static struct PyGetSetDef __pyx_getsets_10pyincerval_8interval_PyInCerval[] = {
 static PyType_Slot __pyx_type_10pyincerval_8interval_PyInCerval_slots[] = {
   {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10pyincerval_8interval_PyInCerval},
   {Py_tp_repr, (void *)__pyx_pw_10pyincerval_8interval_10PyInCerval_7__repr__},
+  {Py_nb_add, (void *)__pyx_nb_add_10pyincerval_8interval_PyInCerval},
+  {Py_nb_multiply, (void *)__pyx_nb_multiply_10pyincerval_8interval_PyInCerval},
   {Py_tp_methods, (void *)__pyx_methods_10pyincerval_8interval_PyInCerval},
   {Py_tp_getset, (void *)__pyx_getsets_10pyincerval_8interval_PyInCerval},
   {Py_tp_init, (void *)__pyx_pw_10pyincerval_8interval_10PyInCerval_1__init__},
@@ -3508,6 +3366,68 @@ static PyType_Spec __pyx_type_10pyincerval_8interval_PyInCerval_spec = {
   __pyx_type_10pyincerval_8interval_PyInCerval_slots,
 };
 #else
+
+static PyNumberMethods __pyx_tp_as_number_PyInCerval = {
+  __pyx_nb_add_10pyincerval_8interval_PyInCerval, /*nb_add*/
+  0, /*nb_subtract*/
+  __pyx_nb_multiply_10pyincerval_8interval_PyInCerval, /*nb_multiply*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_divide*/
+  #endif
+  0, /*nb_remainder*/
+  0, /*nb_divmod*/
+  0, /*nb_power*/
+  0, /*nb_negative*/
+  0, /*nb_positive*/
+  0, /*nb_absolute*/
+  0, /*nb_bool*/
+  0, /*nb_invert*/
+  0, /*nb_lshift*/
+  0, /*nb_rshift*/
+  0, /*nb_and*/
+  0, /*nb_xor*/
+  0, /*nb_or*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_coerce*/
+  #endif
+  0, /*nb_int*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*nb_long*/
+  #else
+  0, /*reserved*/
+  #endif
+  0, /*nb_float*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_oct*/
+  #endif
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_hex*/
+  #endif
+  0, /*nb_inplace_add*/
+  0, /*nb_inplace_subtract*/
+  0, /*nb_inplace_multiply*/
+  #if PY_MAJOR_VERSION < 3 || (CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX < 0x03050000)
+  0, /*nb_inplace_divide*/
+  #endif
+  0, /*nb_inplace_remainder*/
+  0, /*nb_inplace_power*/
+  0, /*nb_inplace_lshift*/
+  0, /*nb_inplace_rshift*/
+  0, /*nb_inplace_and*/
+  0, /*nb_inplace_xor*/
+  0, /*nb_inplace_or*/
+  0, /*nb_floor_divide*/
+  0, /*nb_true_divide*/
+  0, /*nb_inplace_floor_divide*/
+  0, /*nb_inplace_true_divide*/
+  0, /*nb_index*/
+  #if PY_VERSION_HEX >= 0x03050000
+  0, /*nb_matrix_multiply*/
+  #endif
+  #if PY_VERSION_HEX >= 0x03050000
+  0, /*nb_inplace_matrix_multiply*/
+  #endif
+};
 
 static PyTypeObject __pyx_type_10pyincerval_8interval_PyInCerval = {
   PyVarObject_HEAD_INIT(0, 0)
@@ -3530,7 +3450,7 @@ static PyTypeObject __pyx_type_10pyincerval_8interval_PyInCerval = {
   0, /*tp_as_async*/
   #endif
   __pyx_pw_10pyincerval_8interval_10PyInCerval_7__repr__, /*tp_repr*/
-  0, /*tp_as_number*/
+  &__pyx_tp_as_number_PyInCerval, /*tp_as_number*/
   0, /*tp_as_sequence*/
   0, /*tp_as_mapping*/
   0, /*tp_hash*/
@@ -3610,18 +3530,15 @@ static PyMethodDef __pyx_methods[] = {
 
 static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
+    {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
     {&__pyx_kp_s_Pickling_of_struct_members_such, __pyx_k_Pickling_of_struct_members_such, sizeof(__pyx_k_Pickling_of_struct_members_such), 0, 0, 1, 0},
     {&__pyx_n_s_PyInCerval, __pyx_k_PyInCerval, sizeof(__pyx_k_PyInCerval), 0, 0, 1, 1},
     {&__pyx_n_s_PyInCerval___reduce_cython, __pyx_k_PyInCerval___reduce_cython, sizeof(__pyx_k_PyInCerval___reduce_cython), 0, 0, 1, 1},
     {&__pyx_n_s_PyInCerval___setstate_cython, __pyx_k_PyInCerval___setstate_cython, sizeof(__pyx_k_PyInCerval___setstate_cython), 0, 0, 1, 1},
-    {&__pyx_n_s_PyInCerval_add, __pyx_k_PyInCerval_add, sizeof(__pyx_k_PyInCerval_add), 0, 0, 1, 1},
-    {&__pyx_n_s_PyInCerval_mul, __pyx_k_PyInCerval_mul, sizeof(__pyx_k_PyInCerval_mul), 0, 0, 1, 1},
     {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
-    {&__pyx_n_s__12, __pyx_k__12, sizeof(__pyx_k__12), 0, 0, 1, 1},
     {&__pyx_kp_u__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0, 0},
     {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
-    {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
-    {&__pyx_n_s_add, __pyx_k_add, sizeof(__pyx_k_add), 0, 0, 1, 1},
+    {&__pyx_n_s__8, __pyx_k__8, sizeof(__pyx_k__8), 0, 0, 1, 1},
     {&__pyx_n_s_asyncio_coroutines, __pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
     {&__pyx_kp_u_disable, __pyx_k_disable, sizeof(__pyx_k_disable), 0, 1, 0, 0},
@@ -3632,16 +3549,12 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_isenabled, __pyx_k_isenabled, sizeof(__pyx_k_isenabled), 0, 1, 0, 0},
     {&__pyx_n_s_lower, __pyx_k_lower, sizeof(__pyx_k_lower), 0, 0, 1, 1},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
-    {&__pyx_n_s_mul, __pyx_k_mul, sizeof(__pyx_k_mul), 0, 0, 1, 1},
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
-    {&__pyx_n_s_other, __pyx_k_other, sizeof(__pyx_k_other), 0, 0, 1, 1},
     {&__pyx_n_s_pyincerval_interval, __pyx_k_pyincerval_interval, sizeof(__pyx_k_pyincerval_interval), 0, 0, 1, 1},
-    {&__pyx_kp_s_pyincerval_interval_pyx, __pyx_k_pyincerval_interval_pyx, sizeof(__pyx_k_pyincerval_interval_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_pyx_state, __pyx_k_pyx_state, sizeof(__pyx_k_pyx_state), 0, 0, 1, 1},
     {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
     {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
     {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
-    {&__pyx_n_s_result, __pyx_k_result, sizeof(__pyx_k_result), 0, 0, 1, 1},
     {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
     {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
     {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
@@ -3665,47 +3578,15 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "pyincerval/interval.pyx":15
- * 
- *     def add(self, PyInCerval other):
- *         cdef PyInCerval result = PyInCerval(0, 0)             # <<<<<<<<<<<<<<
- *         result.iv = interval_add(self.iv, other.iv)
- *         return result
- */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple_)) __PYX_ERR(1, 15, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
-
-  /* "pyincerval/interval.pyx":14
- *         self.iv.upper = upper
- * 
- *     def add(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
- *         result.iv = interval_add(self.iv, other.iv)
- */
-  __pyx_tuple__5 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_other, __pyx_n_s_result); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__5);
-  __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pyincerval_interval_pyx, __pyx_n_s_add, 14, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(1, 14, __pyx_L1_error)
-
-  /* "pyincerval/interval.pyx":19
- *         return result
- * 
- *     def mul(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
- *         result.iv = interval_mul(self.iv, other.iv)
- */
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pyincerval_interval_pyx, __pyx_n_s_mul, 19, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(1, 19, __pyx_L1_error)
-
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     raise TypeError, "Pickling of struct members such as self.iv must be explicitly requested with @auto_pickle(True)"
  * def __setstate_cython__(self, __pyx_state):
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 1, __pyx_L1_error)
 
   /* "(tree fragment)":3
  * def __reduce_cython__(self):
@@ -3713,10 +3594,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     raise TypeError, "Pickling of struct members such as self.iv must be explicitly requested with @auto_pickle(True)"
  */
-  __pyx_tuple__10 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_pyx_state); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 3, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_pyx_state); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__6);
+  __Pyx_GIVEREF(__pyx_tuple__6);
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -3727,7 +3608,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitConstants(void) {
   if (__Pyx_CreateStringTabAndInitStrings() < 0) __PYX_ERR(1, 1, __pyx_L1_error);
-  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(1, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4110,38 +3990,12 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
 
-  /* "pyincerval/interval.pyx":14
- *         self.iv.upper = upper
- * 
- *     def add(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
- *         result.iv = interval_add(self.iv, other.iv)
- */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pyincerval_8interval_10PyInCerval_3add, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PyInCerval_add, NULL, __pyx_n_s_pyincerval_interval, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 14, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pyincerval_8interval_PyInCerval, __pyx_n_s_add, __pyx_t_2) < 0) __PYX_ERR(1, 14, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_10pyincerval_8interval_PyInCerval);
-
-  /* "pyincerval/interval.pyx":19
- *         return result
- * 
- *     def mul(self, PyInCerval other):             # <<<<<<<<<<<<<<
- *         cdef PyInCerval result = PyInCerval(0, 0)
- *         result.iv = interval_mul(self.iv, other.iv)
- */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pyincerval_8interval_10PyInCerval_5mul, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PyInCerval_mul, NULL, __pyx_n_s_pyincerval_interval, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 19, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pyincerval_8interval_PyInCerval, __pyx_n_s_mul, __pyx_t_2) < 0) __PYX_ERR(1, 19, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_10pyincerval_8interval_PyInCerval);
-
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     raise TypeError, "Pickling of struct members such as self.iv must be explicitly requested with @auto_pickle(True)"
  * def __setstate_cython__(self, __pyx_state):
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pyincerval_8interval_10PyInCerval_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PyInCerval___reduce_cython, NULL, __pyx_n_s_pyincerval_interval, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pyincerval_8interval_10PyInCerval_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PyInCerval___reduce_cython, NULL, __pyx_n_s_pyincerval_interval, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -4152,7 +4006,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     raise TypeError, "Pickling of struct members such as self.iv must be explicitly requested with @auto_pickle(True)"
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pyincerval_8interval_10PyInCerval_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PyInCerval___setstate_cython, NULL, __pyx_n_s_pyincerval_interval, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pyincerval_8interval_10PyInCerval_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PyInCerval___setstate_cython, NULL, __pyx_n_s_pyincerval_interval, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -4842,31 +4696,6 @@ static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *nam
     return 0;
 }
 
-/* PyObjectCall */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
-    PyObject *result;
-    ternaryfunc call = Py_TYPE(func)->tp_call;
-    if (unlikely(!call))
-        return PyObject_Call(func, arg, kw);
-    #if PY_MAJOR_VERSION < 3
-    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
-        return NULL;
-    #else
-    if (unlikely(Py_EnterRecursiveCall(" while calling a Python object")))
-        return NULL;
-    #endif
-    result = (*call)(func, arg, kw);
-    Py_LeaveRecursiveCall();
-    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
-        PyErr_SetString(
-            PyExc_SystemError,
-            "NULL result without error in PyObject_Call");
-    }
-    return result;
-}
-#endif
-
 /* JoinPyUnicode */
 static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
                                       Py_UCS4 max_char) {
@@ -5363,6 +5192,31 @@ static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, 
     Py_XDECREF(kwtuple);
 done:
     Py_LeaveRecursiveCall();
+    return result;
+}
+#endif
+
+/* PyObjectCall */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
+    PyObject *result;
+    ternaryfunc call = Py_TYPE(func)->tp_call;
+    if (unlikely(!call))
+        return PyObject_Call(func, arg, kw);
+    #if PY_MAJOR_VERSION < 3
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    #else
+    if (unlikely(Py_EnterRecursiveCall(" while calling a Python object")))
+        return NULL;
+    #endif
+    result = (*call)(func, arg, kw);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
     return result;
 }
 #endif
@@ -7462,7 +7316,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__12);
+        name = __Pyx_NewRef(__pyx_n_s__8);
     }
     return name;
 }
